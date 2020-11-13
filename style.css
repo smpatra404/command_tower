@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+:root {
+  --cgbluedrk: #0070ad;
+  --cgbluelit: #12abdb;
+  --textcolor: #25383c;
+}
+
+/* setting basic styling for all element */
+
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #8d8c8c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cgbluedrk);
+}
+
+/* custom selection color for texts */
+
+::selection {
+  background: var(--cgbluelit);
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+/* main container is a grid with 1 col and 3 row
+     1. navbar(8%), 
+     2. body(89%), 
+     3. footer(3%) */
+
+#main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8% 89% 3%;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+/* 1. container for Nav bar. It have two parts,
+    1.1 logo, 
+    1.2 menu wrapper */
+
+#nvabar-container {
+  align-items: center;
+  background-color: #0abcf9;
+  background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 1.1 Logo */
+
+#home-logo {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding-left: 1rem;
+  text-align: center;
+}
+
+/* 1.2. menu wrapper have three parts,
+    1.2.a close icon
+    1.2.b open icon
+    1.2.c menu options */
+
+.menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 1.2.a open icon, 1.2.b close icon */
+
+#hamburger-icon,
+#cross-icon {
+  cursor: pointer;
+  display: none;
+  fill: #fff;
+  min-height: 50px;
+  min-width: 50px;
+  padding-right: 1rem;
+}
+
+/* 1.2.c menu options */
+
+#menu-items {
+  display: flex;
+  font-size: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.options {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* 2. body has two parts, 
+    2.1 right side bar
+    2.2 left side bar */
+
+#body-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
+  height: 89vh;
+  width: 100%;
+  position: absolute;
+  top: 8vh;
+}
+
+#leftside-container {
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  transform: translateX(0%);
+  transition: all 0.65s ease-in-out;
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+#leftside-container.hide {
+  transform: translateX(-100%);
+}
+
+#rightside-container {
+  border: 3px solid var(--cgbluedrk);
+  min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: rgb(75, 116, 200);
+  background: linear-gradient(
+    185deg,
+    rgba(75, 116, 200, 1) 5%,
+    rgba(44, 187, 232, 1) 99%
+  );
+  position: relative;
+  right: 0;
+  transform: translateX(0%);
+  transition: all 0.6s linear;
+}
+
+#rightside-container.hide {
+  transform: translateX(-300%);
+}
+
+#tabs-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 10%;
+  justify-content: space-between;
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+}
+
+#tabs-headers {
+  display: flex;
+  list-style: none;
+  overflow-x: auto;
+  max-width: 95%;
+  height: 100%;
+  padding-left: 5px;
+}
+
+.tab,
+#add-icon {
+  align-items: center;
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  border: 3px solid var(--cgbluedrk);
+  border-radius: 5px 5px 0 0;
+  color: var(--textcolor);
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  font-size: 1.15rem;
+  height: 100%;
+  justify-content: center;
+  margin-right: 5px;
+  transition: 0.3s cubic-bezier(0.17, 0.67, 1, 1.23);
+  width: 150px;
+}
+
+.tab.clicked,
+.tab:hover {
+  border: 3px solid #fff;
+  border-bottom: 0px;
+  color: #fff;
+  background: rgb(75, 116, 200);
+  background: linear-gradient(
+    185deg,
+    rgba(75, 116, 200, 1) 5%,
+    rgba(44, 187, 232, 1) 99%
+  );
+}
+#add-icon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 5px;
+}
+#add-icon {
+  font-size: 2rem;
+  font-weight: bolder;
+  outline: none;
+}
+#add-icon:hover {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: rgb(75, 116, 200);
+  background: linear-gradient(
+    185deg,
+    rgba(75, 116, 200, 1) 5%,
+    rgba(44, 187, 232, 1) 99%
+  );
+  color: #fff;
+}
+.dropdown-wrapper {
+  align-items: center;
+  border-radius: 5px 0px 5px 5px;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  color: var(--textcolor);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 1, 1.23);
+  position: absolute;
+  right: 0;
+  top: 10%;
+  width: 100px;
+}
+.dropdown-wrapper.active {
+  transform: translateX(0%);
+}
+.dropdownlinks {
+  transition: all 0.2s ease-in-out;
+  display: block;
+  padding: 5px;
+  width: 100%;
+  font-size: 1rem;
+}
+.dropdownlinks.hide {
+  display: none;
+}
+.dropdownlinks:hover {
+  background-color: var(--cgbluelit);
+  color: #fff;
+}
+
+#content-wrapper {
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+}
+
+#footer-container {
+  align-items: center;
+  background-color: black;
+  color: white;
+  cursor: not-allowed;
+  display: flex;
+  font-size: 13px;
+  height: 20px;
+  justify-content: center;
+  min-height: 3%;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+}
+
+@media (max-width: 700px) {
+  body {
+    overflow: hidden;
+  }
+  #hamburger-icon.active {
+    display: block;
+  }
+  #cross-icon.active {
+    display: block;
+    min-height: 3rem;
+    min-width: 3rem;
+    padding-top: 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #menu-items {
+    background-color: #0abcf9;
+    background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    padding-right: 0px;
+    right: -100%;
+    top: 0;
+    transition: all 0.6s ease;
+    width: 100%;
+  }
+  #menu-items.active {
+    display: flex;
+    right: 0;
+  }
+  #menu-items a {
+    margin-right: -100%;
+    padding: 1rem;
+    transition: margin 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #menu-items.active a {
+    margin-right: 0%;
+  }
+}

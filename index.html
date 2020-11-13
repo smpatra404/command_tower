@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Command Center</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+
+  <body>
+    <!-- main container is a grid with 1 col and 3 row
+     1. navbar, 
+     2. body, 
+     3. footer -->
+    <div id="main-container">
+      <!-- 1. markup for top navigation bar. it three children,
+                1.1 Logo
+                1.2 menu-wrapper -->
+      <div id="nvabar-container">
+        <!-- 1.1 Logo -->
+        <div id="home-logo">
+          <a>Command Center</a>
+        </div>
+
+        <!-- 1.2 menu-Wrapper has 2 children
+                    1.2.a menu-items
+                    1.2.b hamburger-icon -->
+        <div class="menu-wrapper">
+          <!-- 1.2.a menu-items contains close icon(svg) and option links -->
+          <div id="menu-items">
+            <!-- close icon(svg) -->
+            <svg
+              id="cross-icon"
+              class="active"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="10px"
+              height="10px"
+              viewBox="0 0 121.31 122.876"
+              enable-background="new 0 0 121.31 122.876"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M90.914,5.296c6.927-7.034,18.188-7.065,25.154-0.068 c6.961,6.995,6.991,18.369,0.068,25.397L85.743,61.452l30.425,30.855c6.866,6.978,6.773,18.28-0.208,25.247 c-6.983,6.964-18.21,6.946-25.074-0.031L60.669,86.881L30.395,117.58c-6.927,7.034-18.188,7.065-25.154,0.068 c-6.961-6.995-6.992-18.369-0.068-25.397l30.393-30.827L5.142,30.568c-6.867-6.978-6.773-18.28,0.208-25.247 c6.983-6.963,18.21-6.946,25.074,0.031l30.217,30.643L90.914,5.296L90.914,5.296z"
+                />
+              </g>
+            </svg>
+            <!-- options -->
+          </div>
+
+          <!-- 1.2.b hamburger button for opening menu options -->
+          <svg
+            id="hamburger-icon"
+            class="active"
+            enable-background="new 0 0 512 512"
+            height="25"
+            viewBox="0 0 512 512"
+            width="25"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m464.883 64.267h-417.766c-25.98 0-47.117 21.136-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.013-21.137-47.149-47.117-47.149z"
+            />
+            <path
+              d="m464.883 208.867h-417.766c-25.98 0-47.117 21.136-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.013-21.137-47.149-47.117-47.149z"
+            />
+            <path
+              d="m464.883 353.467h-417.766c-25.98 0-47.117 21.137-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.012-21.137-47.149-47.117-47.149z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 2. markup for body (leftside bar and rightside tabs-content area) -->
+      <div id="body-container">
+        <!-- 2.1 leftside bar-->
+        <div id="leftside-container"></div>
+
+        <!-- 2.2 rgihtside bar. having,
+                    2.2.a tabs wrapper
+                    2.2.b content page for the tab -->
+        <div id="rightside-container">
+          <!-- 2.2.a tabs wrapper have tabs headers, add button
+                        and options dropdown inside add button -->
+          <div id="tabs-wrapper">
+            <!-- I. tabs header contains all the selected tabs-->
+            <div id="tabs-headers"></div>
+
+            <!-- II. add wrapper contains the plus icon and dropdown list
+                               containing all the options -->
+            <!-- plus icon -->
+            <button id="add-icon">
+              +
+              <!-- dropdown list -->
+              <div id="tab-dropdown" class="dropdown-wrapper"></div>
+            </button>
+          </div>
+          <div id="content-wrapper"></div>
+        </div>
+      </div>
+
+      <!-- 3. Markup for bottom footer area -->
+      <div id="footer-container"></div>
+    </div>
+  </body>
+</html>
